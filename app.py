@@ -55,7 +55,7 @@ def main():
     st.plotly_chart(forecast_plot, use_container_width=True)
 
     #Display cross-validation performance metrics using streamlit widget
-    st.markdown('### Cross-validation performance metrics for 14 day horizon')
+    st.markdown('### Cross-validation performance metrics for a 6 - 14 day horizon')
     st.dataframe(outlook)
     
 #Execute 'main' function
