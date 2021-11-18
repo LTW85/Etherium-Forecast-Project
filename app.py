@@ -46,8 +46,8 @@ def main():
     #Produce forecast and forecast plot employing the user-defined horizon
     future=model.make_future_dataframe(periods=horizon)
     forecast=model.predict(future)
-    forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-    forecast_plot=plot_plotly(model, forecast, xlabel='Date', ylabel='Price (USD)')
+    forecast_data = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
+    forecast_plot=plot_plotly(model, forecast_data, xlabel='Date', ylabel='Price (USD)')
 
     #Display forecast plot using streamlit widget
     st.markdown('### Forecast Plot')
