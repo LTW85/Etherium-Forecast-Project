@@ -14,7 +14,7 @@ import pickle
 def main():
 
     """
-    Loads test 'pickled' parameters and perfromance metrics from tuning and cross validation. Creates and fits model,
+    Loads 'pickled' parameters and perfromance metrics from tuning and cross validation. Creates and fits model,
     then produces forecast with desiered forecast inputed via streamlit 'number_input' widget. The forecast along with
     latest performace metrics for a 14 day horizon are displayed via streamlit widgets.
     """
