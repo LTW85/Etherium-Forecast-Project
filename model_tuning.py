@@ -14,7 +14,7 @@ def load_data():
     Data will cleaned and and organised in a way that it suitable for the Prophet model.
     """
     #Pull data using the yfinacne library
-    start_date='2016-01-01'
+    start_date='2016-01-02'
     end_date=datetime.today() - timedelta(1)
     end_date=datetime.strftime(end_date, '%Y-%m-%d')
     yf_data=yf.download('ETH-USD',start_date, end_date)
