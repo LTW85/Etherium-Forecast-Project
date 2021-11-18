@@ -1,6 +1,5 @@
 import pandas as pd
 import numpy as np
-import json
 import streamlit as st
 import yfinance as yf
 from fbprophet import Prophet
