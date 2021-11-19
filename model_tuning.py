@@ -33,7 +33,7 @@ def load_data():
 
 def tune():
     """
-    Tune test a prophet model using pre-defined cutoff periods. Returns a dataframe with a single row containing
+    Tune a prophet model using pre-defined cutoff periods. Returns a dataframe with a single row containing
     optimal 'changepoint_prior_scale' value and 'seasonality_prior_scale' value.
     """
     #Define cutoff periods and parameters values to be searched
