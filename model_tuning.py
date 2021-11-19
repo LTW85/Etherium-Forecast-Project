@@ -57,6 +57,7 @@ def tune():
     #Create dataframe of results and return best perfroming parameters
     tuning_results=pd.DataFrame(all_params)
     tuning_results['mae']=mae
+    tuning_results = tuning_results.reset_index(drop=True)
     tuning_results = tuning_results.sort_values(['mae'])[:1]
     
     return tuning_results
