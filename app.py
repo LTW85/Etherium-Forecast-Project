@@ -20,7 +20,8 @@ def main():
 
     #Set title and create sidebar with 'horizon' input widget
     st.title('ETH-USD Forecast')
-    horizon = st.sidebar.number_input(label='Forecast Horizon', 
+    st.sidebar.header('Forecast Horizon')
+    horizon = st.sidebar.number_input(label='Input the number of days to be forecast', 
     min_value=1, max_value=None, value=60, step=30, help='Select forecast horizon to be displayed (default = 60 days)')
     st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 30 days steps. For custom horizon, type number of days in and hit enter.*')
 
