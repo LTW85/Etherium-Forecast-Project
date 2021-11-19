@@ -45,7 +45,7 @@ def tune():
 
     #Create list containing all parameter combinations
     all_params=[dict(zip(param_grid.keys(), v)) for v in itertools.product(*param_grid.values())]
-    mae=[]  # Store the RMSEs for each params here
+    mae=[] 
 
     #Perfrom grid-search using mean absolute error (mae) as evaluation metric
     for params in all_params:
