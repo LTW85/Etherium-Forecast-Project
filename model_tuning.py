@@ -102,6 +102,7 @@ def main():
     seasonality_mode="multiplicative",
     yearly_seasonality=True,
     interval_width=0.95,
+    changepoint_range = 0.9,
     changepoint_prior_scale=tuned_params['changepoint_prior_scale'][0],
     seasonality_prior_scale=tuned_params['seasonality_prior_scale'][0]
     )
