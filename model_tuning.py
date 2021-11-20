@@ -14,7 +14,7 @@ def load_data():
     Data will cleaned and and organised in a way that it suitable for the Prophet model.
     """
     #Pull data using the yfinacne library
-    start_date='2016-01-02'
+    start_date='2016-01-01'
     end_date=datetime.today() - timedelta(1)
     end_date=datetime.strftime(end_date, '%Y-%m-%d')
     yf_data=yf.download('ETH-USD',start_date, end_date)
@@ -25,7 +25,7 @@ def load_data():
     new_date_range=pd.date_range(start=start_date, end=end_date, freq="D")
     yf_data=yf_data.reindex(new_date_range, method='ffill')
 
-    #Organise data in a manner that suitable for use with Prophet
+    #Organise data in a manner that is suitable for use with Prophet
     prophet_df=yf_data.reset_index(level=0)
     prophet_df=prophet_df.rename({'index': 'ds', 'Close': 'y'}, axis=1)
 
@@ -64,7 +64,7 @@ def tune():
 
 def cross_val(m):
    """
-   Perform cross-validation and return dataframe of perfrormance metrics
+   Perform cross-validation and return dataframe of performance metrics
    """ 
    #Perform cross-validation (resulting in 46 model fits) and produce performance metrics
    df_cv=cross_validation(m, initial='730 days', period='30 days', horizon = '60 days')
@@ -108,7 +108,7 @@ def main():
 
     model.fit(data)
 
-    #Get perfromacne metrics from cross-validation
+    #Get performacne metrics from cross-validation
     outlook_res = get_outlook(cross_val(model))
 
     #Pickle tuned parameters
