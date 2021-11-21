@@ -30,12 +30,22 @@ in an effect akin to elasticnet. In this sense, larger values - particuarly for 
 that tracks trends closely. A 'tighter' fit is likely to produce more accurate forecasts when a market is trending strongly. A 'relaxed' fit may produce more accurate forecasts 
 when a market is ranging and may further have the ability to catch breakouts. Thus, given an appropriate window within the test data for tuning, it may be possible for the Prothet algoithm to adjust 
 the modelling process and provide forecasts that reflect current market conditions. The longer a market is ranging, the more 'relaxed' the fit will become. Conversely, the longer and more stongly a market is trending,
-the more 'tight' the fit will become.  
+the more 'tight' the fit will become. 
 
 *Cross-validation*
 
 Currently, cross-validation is performed using pre-defined cutoff periods in the dataset that capture contemporary market conditions. A method of dynamically selecting an optimal window and cutoffs will be the subject of future 
 research and development. At the time of writing (Nov - 2021), cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10-14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance metrics for a 14 horizon are provided via the Streamlit app. This outcome is likely due to a stongly trending market. When the market is ranging, it may be possible to produce more accurate forecasts at a longer horizon.
+
+After the hyper-parameter tuning and cross-validation procedures mentioned above have been carried out, it appears that the tuned model offers better results. This can be demonstrated by comparing error metrics for a baseline model (no regularisation), and a model tuned for comtemporary conditions:
+
+**Baseline**
+
+![Baseline error metrics](base_metrics.PNG)
+
+**Tuned Model**
+
+![Tuned model error metrics](tuned_metrics.PNG)
 
 *Automation*
 
