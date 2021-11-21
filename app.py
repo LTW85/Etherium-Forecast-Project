@@ -30,7 +30,7 @@ def main():
     min_value=1, max_value=None, value=60, step=30, help='Select forecast horizon to be displayed (default = 60 days)')
     st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 30 day steps. For custom horizon, type number of days in and hit enter.*')
     st.sidebar.header('Interval Width')
-    int_select = st.sidebar.radio(label='Please select confidence interval to be displayed', options=[.80, .85, .90, .95, .99], help=('Upper and lower interval to be displayed'), index=4)
+    int_select = st.sidebar.radio(label='Please select confidence interval to be displayed', options=[.80, .85, .90, .95, .99], help=('Upper and lower interval to be displayed'), index=3)
     
 
     #Load data from Yahoo Finance (function defined in model_tuning.py), as well as 'pickled' parameters and cross-validation performance metrics
