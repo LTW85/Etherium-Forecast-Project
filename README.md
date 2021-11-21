@@ -22,6 +22,7 @@ price values and dates are filled in (though Prophet can function well with miss
 ## Hyper-parameter Tuning, Cross-validation, and Automation 
 
 *Hyper-parameter tuning*
+
 Two hyper-parameters - changepoint_prior_scale and seasonality_prior_scale are tuned via a grid-search. These two 
 hyper-parameters have the effect of applying l1 (lasso) and l2 (ridge) regularisation to the curve-fitting process respectively. A combination of both results
 in an effect akin to elasticnet. In this sense, larger values - particuarly for changepoint_prior_scale - will 'relax' the fit, and smaller values will offer a 'tight' fit
@@ -30,11 +31,13 @@ when a market is ranging and have the ability to catch breakouts. Thus given an 
 the modelling process and provide forecasts that reflect current market conditions.  
 
 *Cross-validation*
+
 Currently, cross-validation is performed using pre-defined cutoff periods in the dataset. A method of dynamically selecting an optimal window and cutoffs will be the subject of future 
 research and development. Cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10-14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance
 metrics for a 14 horizon are provided via the Streamlit app.
 
 *Automation*
+
 In order for the project to provide forecasts that adpat to market conditions, the tuning process has been automated via Github actions. The process follows the steps below:
 
 **Step 1:** A .yaml file containing a workflow procedure is executed on a schedule - currently once a day. 
