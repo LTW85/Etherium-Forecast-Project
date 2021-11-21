@@ -1,3 +1,4 @@
+[![CodeFactor](https://www.codefactor.io/repository/github/ltw85/etherium-forecast-project/badge)](https://www.codefactor.io/repository/github/ltw85/etherium-forecast-project)
 ![Streamlit screenshot](screenshot.PNG)
 
 Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
