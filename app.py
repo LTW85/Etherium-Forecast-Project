@@ -15,7 +15,7 @@ def main():
 
     """
     Loads 'pickled' parameters and performance metrics from tuning and cross validation. Creates and fits model,
-    then produces forecast with desiered forecast inputed via streamlit 'number_input' widget. The forecast along with
+    then produces forecast with desiered forecast inputed via streamlit 'number_input' widget, and interval with inputed via radio buttons. The forecast along with
     latest performace metrics for a 14 day horizon are displayed via streamlit widgets.
     """
 
