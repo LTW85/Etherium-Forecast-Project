@@ -25,12 +25,11 @@ price values as well as dates are filled in (though Prophet can function well wi
 *Hyper-parameter tuning*
 
 Two hyper-parameters - changepoint_prior_scale and seasonality_prior_scale are tuned via a grid-search. These two 
-hyper-parameters have the effect of applying l1 (lasso) and l2 (ridge) regularisation to the curve-fitting process respectively. A combination of both results
-in an effect akin to elasticnet. In this sense, larger values - particuarly for changepoint_prior_scale - will 'relax' the fit, and smaller values will offer a 'tight' fit
-that tracks trends closely. A 'tighter' fit is likely to produce more accurate forecasts when a market is trending strongly. A 'relaxed' fit may produce more accurate forecasts 
-when a market is ranging and may further have the ability to catch breakouts. Thus, given an appropriate window within the test data for tuning, it may be possible for the Prothet algoithm to adjust 
-the modelling process and provide forecasts that reflect current market conditions. The longer a market is ranging, the more 'relaxed' the fit will become. Conversely, the longer and more stongly a market is trending,
-the more 'tight' the fit will become. 
+hyper-parameters have the effect of applying l1 (lasso) and l2 (ridge) regularisation to the curve-fitting process respectively. A combination of both results gives
+an effect akin to elasticnet. In this sense, larger values - particuarly for changepoint_prior_scale - will 'relax' the fit allowing for room to track trends closely, and smaller values will offer a 'tight' fit. A 'tighter' fit is likely to produce more accurate forecasts when a market is ranging and could further have the ability to catch breakouts when the tuning is automated. A 'relaxed' fit may produce more accurate forecasts 
+when a market is trending. Thus, given an appropriate window within the test data for tuning, it may be possible for the Prothet algoithm to adjust 
+the modelling process and provide forecasts that reflect current market conditions. The longer a market is ranging, the more 'tight' the fit will become. Conversely, the longer and more stongly a market is trending,
+the more 'relaxed' the fit will become. 
 
 *Cross-validation*
 
