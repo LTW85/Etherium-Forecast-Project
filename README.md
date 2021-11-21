@@ -40,11 +40,13 @@ research and development. At the time of writing (Nov - 2021), cross-validation 
 After the hyper-parameter tuning and cross-validation procedures mentioned above have been carried out, it appears that the tuned model offers better results. This can be demonstrated by comparing error metrics for an example baseline model (no regularisation), and an example model tuned for contemporary conditions:
 
 **Baseline**
+
 *Averages across 46 fits*
 
 ![Baseline error metrics](base_metrics.PNG)
 
 **Tuned Model**
+
 *Averages across 46 fits*
 
 ![Tuned model error metrics](tuned_metrics.PNG)
