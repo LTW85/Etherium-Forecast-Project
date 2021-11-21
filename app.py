@@ -20,6 +20,7 @@ def main():
 
     #Set title and create sidebar with 'horizon' input widget
     st.title('ETH-USD Forecast')
+    st.markdown('## Adaptive forecasting for the ETH-USD market')
     st.sidebar.header('Forecast Horizon')
     horizon = st.sidebar.number_input(label='Input the number of days to be forecast', 
     min_value=1, max_value=None, value=60, step=30, help='Select forecast horizon to be displayed (default = 60 days)')
@@ -55,7 +56,6 @@ def main():
 
     #Display forecast plot using streamlit widget
     st.markdown('### Forecast Plot')
-    st.markdown('Adaptive forecasting for the ETH-USD market')
     st.markdown('*Data scource: Yahoo Finance*')  
     st.plotly_chart(forecast_plot, use_container_width=True)
 
