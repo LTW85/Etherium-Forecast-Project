@@ -1,6 +1,7 @@
 # Etherium-Forecast-Project
 ETH-USD forecast using the Prophet algorithm, Streamlit and Github Actions.
-[Live app:](https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py) 
+
+Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
 
 ## Overview
 The primary goal of this project is to provide up-to-date forecasts for the ETH-USD market.
