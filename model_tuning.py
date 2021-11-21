@@ -41,6 +41,7 @@ def tune():
     param_grid={  
         'changepoint_prior_scale': [0.001, 0.01, 0.1, 0.5],
         'seasonality_prior_scale': [0.01, 0.1, 1.0, 10.0],
+        'changepoint_range': [.8, .85, .9]
     }
 
     #Create list containing all parameter combinations
@@ -103,7 +104,8 @@ def main():
     yearly_seasonality=True,
     interval_width=0.95,
     changepoint_prior_scale=tuned_params['changepoint_prior_scale'][0],
-    seasonality_prior_scale=tuned_params['seasonality_prior_scale'][0]
+    seasonality_prior_scale=tuned_params['seasonality_prior_scale'][0],
+    changepoint_range=tuned_params['changepoint_range'][0]
     )
 
     model.fit(data)
