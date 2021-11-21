@@ -26,7 +26,7 @@ def main():
     min_value=1, max_value=None, value=60, step=30, help='Select forecast horizon to be displayed (default = 60 days)')
     st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 30 day steps. For custom horizon, type number of days in and hit enter.*')
     st.sidebar.header('General Information')
-    st.sidebar.markdown('New data collected daily. Model tuning is also conducted daily to ensure the forecast is in-line with contemporary market conditions. \n' 
+    st.sidebar.markdown('New data collected daily (close prices). Model tuning is also conducted daily to ensure the forecast is in-line with contemporary market conditions. \n' 
     'Currently, cross-validation suggests a maximum forecast horizon of 10-14 as being most suitable. Cross-validation performance metrics for a 6 - 14 day horizon are also updated daily.')
 
     #Load data from Yahoo Finance (function defined in model_tuning.py), as well as 'pickled' parameters and cross-validation performance metrics
@@ -52,7 +52,7 @@ def main():
     future=model.make_future_dataframe(periods=horizon)
     forecast=model.predict(future)
     forecast_data = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
-    forecast_plot=plot_plotly(model, forecast_data, xlabel='Date', ylabel='Price (USD)')
+    forecast_plot=plot_plotly(model, forecast_data, xlabel='Date', ylabel='Close Price (USD)')
 
     #Display forecast plot using streamlit widget 
     st.plotly_chart(forecast_plot, use_container_width=True)
