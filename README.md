@@ -1,4 +1,4 @@
-[![CodeFactor](https://www.codefactor.io/repository/github/ltw85/etherium-forecast-project/badge)](https://www.codefactor.io/repository/github/ltw85/etherium-forecast-project)
+[![CodeFactor](https://www.codefactor.io/repository/github/ltw85/etherium-forecast-project/badge)](https://www.codefactor.io/repository/github/ltw85/etherium-forecast-project) [![Tweet](https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Fgithub.com%2FLTW85%2FEtherium-Forecast-Project)](https://twitter.com/intent/tweet?text=https%3A%2F%2Fgithub.com%2FLTW85%2FEtherium-Forecast-Project)
 ![Streamlit screenshot](screenshot.PNG)
 
 Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
