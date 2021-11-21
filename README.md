@@ -1,6 +1,3 @@
-# Etherium-Forecast-Project
-
-
 ![Streamlit screenshot](screenshot.PNG)
 
 Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
