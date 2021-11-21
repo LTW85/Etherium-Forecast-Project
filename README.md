@@ -40,10 +40,12 @@ research and development. At the time of writing (Nov - 2021), cross-validation 
 After the hyper-parameter tuning and cross-validation procedures mentioned above have been carried out, it appears that the tuned model offers better results. This can be demonstrated by comparing error metrics for an example baseline model (no regularisation), and an example model tuned for contemporary conditions:
 
 **Baseline**
+*Averages across 46 fits*
 
 ![Baseline error metrics](base_metrics.PNG)
 
 **Tuned Model**
+*Averages across 46 fits*
 
 ![Tuned model error metrics](tuned_metrics.PNG)
 
@@ -60,7 +62,7 @@ using the optimal values and cross-validation is completed. Output is formatted 
 
 **Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale and seasonality_prior_scale. A model is built using these values and the forecast is displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prohpet algorithm is very fast which helps to make this process viable. 
 
-## Notes
+## Notes and Acknowledgements
 A (free) Streamlit account is required in order to build the web app component.
 
 When executing the app using Streamlit, a model can be built and results displayed generally within 15 - 25 seconds. 

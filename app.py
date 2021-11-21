@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from requests.api import options
 import streamlit as st
 import yfinance as yf
 from fbprophet import Prophet
@@ -21,27 +22,31 @@ def main():
     #Set title and create sidebar with 'horizon' input widget
     st.title('ETH-USD Forecast')
     st.markdown('## Adaptive forecasting for the ETH-USD market')
+    st.sidebar.header('General Information')
+    st.sidebar.markdown('New data collected daily (close prices). Model tuning is also conducted daily to ensure the forecast is in-line with contemporary market conditions. \n' 
+    'Currently, cross-validation suggests a maximum forecast horizon of 10-14 as being most suitable. Cross-validation performance metrics for a 6 - 14 day horizon are also updated daily.')
     st.sidebar.header('Forecast Horizon')
     horizon = st.sidebar.number_input(label='Input the number of days to be forecast', 
     min_value=1, max_value=None, value=60, step=30, help='Select forecast horizon to be displayed (default = 60 days)')
     st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 30 day steps. For custom horizon, type number of days in and hit enter.*')
-    st.sidebar.header('General Information')
-    st.sidebar.markdown('New data collected daily (close prices). Model tuning is also conducted daily to ensure the forecast is in-line with contemporary market conditions. \n' 
-    'Currently, cross-validation suggests a maximum forecast horizon of 10-14 as being most suitable. Cross-validation performance metrics for a 6 - 14 day horizon are also updated daily.')
+    int_select = st.sidebar.radio(label='Please select confidence interval to be displayed', options=[80, 85, 90, 95, 99])
+    
 
     #Load data from Yahoo Finance (function defined in model_tuning.py), as well as 'pickled' parameters and cross-validation performance metrics
     data=load_data()
     params_in = open('tuned_params.pickle', 'rb')
     params = pickle.load(params_in)
+    params_in.close()
     outlook_in = open('outlook.pickle', 'rb')
     outlook = pickle.load(outlook_in)
+    outlook_in.close()
     outlook = outlook.astype({'Horizon': 'str'})
 
     #Build and fit Prohpet model with tuned 'changepoint_prior_scale' and 'seasonality_prior_scale' parameters 
     model=Prophet(
     seasonality_mode="multiplicative",
     yearly_seasonality=True,
-    interval_width = 0.95,
+    interval_width = int_select,
     changepoint_prior_scale=params['changepoint_prior_scale'][0],
     seasonality_prior_scale=params['seasonality_prior_scale'][0]
     )
