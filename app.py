@@ -26,7 +26,7 @@ def main():
     st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 30 day steps. For custom horizon, type number of days in and hit enter.*')
     st.sidebar.header('General Information')
     st.sidebar.markdown('New data collected daily. Model tuning is also conducted daily to ensure the forecast is in-line with contemporary market conditions. \n' 
-    'Currently, cross-validation suggests a maximum forecast horizon of 10-14 is most suitable in terms of accuracy. Cross-validation performance metrics for a 6 - 14 day horizon are also updated daily.')
+    'Currently, cross-validation suggests a maximum forecast horizon of 10-14 as being most suitable. Cross-validation performance metrics for a 6 - 14 day horizon are also updated daily.')
 
     #Load data from Yahoo Finance (function defined in model_tuning.py), as well as 'pickled' parameters and cross-validation performance metrics
     data=load_data()
