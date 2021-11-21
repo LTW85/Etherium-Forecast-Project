@@ -35,8 +35,7 @@ the more 'tight' the fit will become.
 *Cross-validation*
 
 Currently, cross-validation is performed using pre-defined cutoff periods in the dataset that capture contemporary market conditions. A method of dynamically selecting an optimal window and cutoffs will be the subject of future 
-research and development. At the time of writing, cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10-14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance
-metrics for a 14 horizon are provided via the Streamlit app. This outcome is likely due to a stongly trending market. When the market is ranging, it may be possible to produce more accurate forecasts at a longer horizon.
+research and development. At the time of writing (Nov - 2021), cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10-14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance metrics for a 14 horizon are provided via the Streamlit app. This outcome is likely due to a stongly trending market. When the market is ranging, it may be possible to produce more accurate forecasts at a longer horizon.
 
 *Automation*
 
@@ -52,8 +51,12 @@ using the optimal values and cross-validation is completed. Output is formatted 
 **Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale and seasonality_prior_scale. A model is built using these values and the forecast displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prohpet algorithm is very fast which helps to make this process viable. 
 
 ## Notes
+A (free) Streamlit account required in order to build the web app component.
 When executing the app using Streamlit, a model can be built and results displayed generally within 15 - 25 seconds. 
 Hyper-parameter tuning and cross-validation using the model_tuning.py script generally takes between 10 - 12 minutes to complete.
+
+## Download
+`gh repo clone LTW85/Etherium-Forecast-Project`
 
 
 
