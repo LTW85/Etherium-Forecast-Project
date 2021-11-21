@@ -67,6 +67,14 @@ When executing the app using Streamlit, a model can be built and results display
 
 Hyper-parameter tuning and cross-validation using the model_tuning.py script generally takes between 10 - 12 minutes to complete.
 
+For more information:
+
+Prophet -- https://facebook.github.io/prophet/docs/installation.html
+
+Streamlit -- https://streamlit.io/
+
+Github Actions -- https://github.com/features/actions
+
 ## Download
 `git clone https://github.com/LTW85/Etherium-Forecast-Project.git`
 
