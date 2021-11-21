@@ -54,14 +54,13 @@ def main():
     forecast_data = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
     forecast_plot=plot_plotly(model, forecast_data, xlabel='Date', ylabel='Price (USD)')
 
-    #Display forecast plot using streamlit widget
-    st.markdown('### Forecast Plot')
-    st.markdown('*Data scource: Yahoo Finance*')  
+    #Display forecast plot using streamlit widget 
     st.plotly_chart(forecast_plot, use_container_width=True)
 
     #Display cross-validation performance metrics using streamlit widget
     st.markdown('### Cross-validation performance metrics for a 6 - 14 day horizon')
     st.dataframe(outlook)
+    st.markdown('*Data scource: Yahoo Finance*') 
     
 #Execute 'main' function
 if __name__ == '__main__':
