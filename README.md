@@ -1,6 +1,8 @@
 # Etherium-Forecast-Project
 Adaptive forecasting for the ETH-USD market using the Prophet algorithm, Streamlit and Github Actions.
 
+![Streamlit screenshot](screenshot.PNG)
+
 Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
 
 ## Overview
