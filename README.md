@@ -9,7 +9,7 @@ This is a central problem with regards to such markets as they are generally hig
 
 To address this issue, the Prophet algorithm was selected as it offers many favorable attributes and functionalities in terms of forecasting 
 a cryptocurrency market. Prophet employs a flexible curve-fitting process that is fast, able to handle outliers and 'shocks' reasonably well, and functions best where 
-strong seasonal trends are present - all of which appply to many cryptocurrency markets. 
+strong seasonal trends are present - all of which apply to many cryptocurrency markets. 
 
 The main draw for Prophet, however, is the ability to tune certain hyper-parameters that will enable the Prohpet algorithm to adapt the modelling process to
 current market conditions. This in turn affords consistently relevant forecasts - particuarly when the tuning procedure is automated.
