@@ -1,5 +1,5 @@
 # Etherium-Forecast-Project
-ETH-USD forecast using the Prophet algorithm, Streamlit and Github Actions.
+Adaptive forecasting for the ETH-USD market using the Prophet algorithm, Streamlit and Github Actions.
 
 Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
 
@@ -28,14 +28,15 @@ Two hyper-parameters - changepoint_prior_scale and seasonality_prior_scale are t
 hyper-parameters have the effect of applying l1 (lasso) and l2 (ridge) regularisation to the curve-fitting process respectively. A combination of both results
 in an effect akin to elasticnet. In this sense, larger values - particuarly for changepoint_prior_scale - will 'relax' the fit, and smaller values will offer a 'tight' fit
 that tracks trends closely. A 'tighter' fit is likely to produce more accurate forecasts when a market is trending strongly and a 'relaxed' fit may produce more accurate forecasts 
-when a market is ranging and have the ability to catch breakouts. Thus given an appropriate window within the test data for tuning, it might be possible for the Prothet algoithm to adjust 
-the modelling process and provide forecasts that reflect current market conditions.  
+when a market is ranging and have the ability to catch breakouts. Thus given an appropriate window within the test data for tuning, it may be possible for the Prothet algoithm to adjust 
+the modelling process and provide forecasts that reflect current market conditions. The longer a market is ranging, the more 'relaxed' the fit will become, and conversely the longer and more stongly a market is trending,
+the more 'tight' the fit will become.  
 
 *Cross-validation*
 
-Currently, cross-validation is performed using pre-defined cutoff periods in the dataset. A method of dynamically selecting an optimal window and cutoffs will be the subject of future 
-research and development. Cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10-14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance
-metrics for a 14 horizon are provided via the Streamlit app.
+Currently, cross-validation is performed using pre-defined cutoff periods in the dataset that capture contemporary market conditions. A method of dynamically selecting an optimal window and cutoffs will be the subject of future 
+research and development. At the time of writing, cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10-14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance
+metrics for a 14 horizon are provided via the Streamlit app. This outcome is likely due to a storngly trending market. When the market is ranging, it may be possible to produce more accurate forecasts for a longer horizon.
 
 *Automation*
 
