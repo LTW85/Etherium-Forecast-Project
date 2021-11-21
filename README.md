@@ -65,6 +65,8 @@ using the optimal values and cross-validation is completed. Output is formatted 
 ## Notes and Acknowledgements
 A (free) Streamlit account is required in order to build the web app component.
 
+Interval widths to be displayed can be selected from the Streamlit app interface.
+
 When executing the app using Streamlit, a model can be built and results displayed generally within 15 - 25 seconds. 
 
 Hyper-parameter tuning and cross-validation using the model_tuning.py script generally takes between 10 - 12 minutes to complete.
