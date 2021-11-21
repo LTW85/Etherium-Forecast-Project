@@ -61,8 +61,10 @@ using the optimal values and cross-validation is completed. Output is formatted 
 **Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale and seasonality_prior_scale. A model is built using these values and the forecast displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prohpet algorithm is very fast which helps to make this process viable. 
 
 ## Notes
-A (free) Streamlit account required in order to build the web app component.
+A (free) Streamlit account is required in order to build the web app component.
+
 When executing the app using Streamlit, a model can be built and results displayed generally within 15 - 25 seconds. 
+
 Hyper-parameter tuning and cross-validation using the model_tuning.py script generally takes between 10 - 12 minutes to complete.
 
 ## Download
