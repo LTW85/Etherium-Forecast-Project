@@ -18,7 +18,7 @@ The result of this project is a Streamlit web app that provides forecasts for th
 
 ## Data
 Data for this project is collected daily from Yahoo Finance and concerns daily close prices for the ETH-USD market. The data is cleaned and missing
-price values and dates are filled in (though Prophet can function well with missing data).
+price values as well as dates are filled in (though Prophet can function well with missing data).
 
 ## Hyper-parameter Tuning, Cross-validation, and Automation 
 
