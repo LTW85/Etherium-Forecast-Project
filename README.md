@@ -58,12 +58,11 @@ In order for the project to provide forecasts that adpat to market conditions, t
 
 **Step 1:** A .yaml file containing a workflow procedure is executed on a schedule - currently once a day. 
 
-**Step 2:** The workflow runs the model_tuning.py script which performs the grid-search to find optimal values for changepoint_prior_scale and seasonality_prior_scale - based on contemporary market conditions. A model is then built
-using the optimal values and cross-validation is completed. Output is formatted in a user-friendly manner. The selected hyper-parameter values and performance metrics are then saved as .pickle files.
+**Step 2:** The workflow runs the model_tuning.py script which performs the grid-search to find optimal values for changepoint_prior_scale, seasonality_prior_scale, and changepoint_range - based on contemporary market conditions. A model is then built using the optimal values and cross-validation is completed. Output is formatted in a user-friendly manner. The selected hyper-parameter values and performance metrics are then saved as .pickle files.
 
 **Step 3:** Both .pickle files are commited and pushed back to the Github repository via the workflow procedure
 
-**Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale and seasonality_prior_scale. A model is built using these values and the forecast is displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prohpet algorithm is very fast which helps to make this process viable using Github Actions. 
+**Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale, seasonality_prior_scale, and changepoint_range. A model is built using these values and the forecast is displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prohpet algorithm is very fast which helps to make this process viable using Github Actions. 
 
 ## Notes and Acknowledgements
 A (free) Streamlit account is required in order to build the web app component.
