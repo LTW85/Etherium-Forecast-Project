@@ -27,8 +27,8 @@ def main():
     'Currently, cross-validation suggests a maximum forecast horizon of 10-14 as being most suitable. Cross-validation performance metrics for a 6 - 14 day horizon are also updated daily.')
     st.sidebar.header('Forecast Horizon')
     horizon = st.sidebar.number_input(label='Input the number of days to be forecast', 
-    min_value=1, max_value=None, value=60, step=30, help='Select forecast horizon to be displayed (default = 60 days)')
-    st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 30 day steps. For custom horizon, type number of days in and hit enter.*')
+    min_value=1, max_value=None, value=14, step=7, help='Select forecast horizon to be displayed (default = 14 days)')
+    st.sidebar.markdown('*NOTE: the +/- toggles will adjust the forecast in 7 day steps. For custom horizon, type number of days in and hit enter.*')
     st.sidebar.header('Interval Width')
     int_select = st.sidebar.radio(label='Please select confidence interval to be displayed', options=[.80, .85, .90, .95, .99], help=('Upper and lower interval to be displayed'), index=3)
     
@@ -49,7 +49,8 @@ def main():
     yearly_seasonality=True,
     interval_width = int_select,
     changepoint_prior_scale=params['changepoint_prior_scale'][0],
-    seasonality_prior_scale=params['seasonality_prior_scale'][0]
+    seasonality_prior_scale=params['seasonality_prior_scale'][0],
+    changepoint_range=params['changepoint_range'][0]
     )
 
     model.fit(data)
