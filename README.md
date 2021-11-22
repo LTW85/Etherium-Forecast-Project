@@ -62,7 +62,7 @@ In order for the project to provide forecasts that adpat to market conditions, t
 
 **Step 3:** Both .pickle files are commited and pushed back to the Github repository via the workflow procedure
 
-**Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale, seasonality_prior_scale, and changepoint_range. A model is built using these values and the forecast is displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prohpet algorithm is very fast which helps to make this process viable using Github Actions. 
+**Step 4:** Everytime the Streamlit app in run, values are read in from the .pickle files for changepoint_prior_scale, seasonality_prior_scale, and changepoint_range. A model is built using these values and the forecast is displayed. The current cross-validation performance metrics are also read in and displayed (14 day horizon). The Prophet algorithm is very fast which helps to make this process viable using Github Actions. 
 
 ## Notes and Acknowledgements
 A (free) Streamlit account is required in order to build the web app component.
