@@ -54,7 +54,7 @@ After the hyper-parameter tuning and cross-validation procedures mentioned above
 
 *Automation*
 
-In order for the project to provide forecasts that adpat to market conditions, the tuning process has been automated via Github actions. The process follows the steps below:
+In order for the project to provide forecasts that adpat to market conditions, the tuning process has been automated via Github Actions. The process follows the steps below:
 
 **Step 1:** A .yaml file containing a workflow procedure is executed on a schedule - currently once a day. 
 
