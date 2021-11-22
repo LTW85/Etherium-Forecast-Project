@@ -4,7 +4,7 @@
 Live app: https://share.streamlit.io/ltw85/etherium-forecast-project/main/app.py
 
 ## Overview
-The primary goal of this project is to provide up-to-date forecasts for the ETH-USD market.
+The primary goal of this project is to provide automated forecasts for the ETH-USD market that account for contemporary market conditions.
 This is a central problem with regards to such markets as they are generally highly volitile and unstable.
 
 To address this issue, the Prophet algorithm was selected as it offers many favorable attributes and functionalities in terms of forecasting 
