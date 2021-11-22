@@ -25,7 +25,7 @@ price values as well as dates are filled in (though Prophet can function well wi
 *Hyper-parameter tuning*
 
 Three hyper-parameters - changepoint_prior_scale, seasonality_prior_scale, and changepoint_range are tuned via a grid-search. The first two 
-hyper-parameters have the effect of applying l1 (lasso) and l2 (ridge) regularisation to the curve-fitting process respectively. A combination of both results gives
+hyper-parameters have the effect of applying l1 (lasso) and l2 (ridge) regularisation to the curve-fitting process respectively. A combination of both results in
 an effect akin to elasticnet. In this sense, larger values - particuarly for changepoint_prior_scale - will 'relax' the fit allowing for room to track trends closely, and smaller values will offer a 'tight' fit. A 'tighter' fit is likely to produce more accurate forecasts when a market is ranging and could further have the ability to catch breakouts when the tuning is automated. A 'relaxed' fit may produce more accurate forecasts 
 when a market is trending. Thus, given an appropriate window within the test data for tuning, it may be possible for the Prothet algoithm to adjust 
 the modelling process and provide forecasts that reflect current market conditions. The longer a market is ranging, the more 'tight' the fit will become. Conversely, the longer and more stongly a market is trending,
@@ -38,7 +38,7 @@ By default, changepoints are inferred by the Prophet algorithm using the first 8
 Currently, cross-validation is performed using pre-defined cutoff periods in the dataset that capture contemporary market conditions. A method of dynamically selecting an optimal window and cutoffs will be the subject of future 
 research and development. At the time of writing (Nov - 2021), cross-validation performance metrics suggest that generally, a maximum forecast horizon of 10 - 14 days is most appropriate after which accuracy decreases rapdily. Cross-validation performance metrics for a 14 horizon are provided via the Streamlit app. This outcome is likely due to a stongly trending market. When the market is ranging, it may be possible to produce more accurate forecasts at a longer horizon.
 
-After the hyper-parameter tuning and cross-validation procedures mentioned above have been carried out, it appears that the tuned model offers better results. This can be demonstrated by comparing error metrics for an example baseline model (no regularisation), and an example model tuned for contemporary conditions:
+After the hyper-parameter tuning and cross-validation procedures mentioned above have been carried out, it appears that the tuned model offers better results. This can be demonstrated by comparing error metrics for an example baseline model (no regularisation and default changepoint range of 80%), and an example model tuned for contemporary conditions:
 
 **Baseline**
 
