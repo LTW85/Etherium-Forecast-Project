@@ -35,19 +35,19 @@ def main():
 
     #Load data from Yahoo Finance (function defined in model_tuning.py), as well as 'pickled' parameters and cross-validation performance metrics
     data=load_data()
-    params_in = open('tuned_params.pickle', 'rb')
-    params = pickle.load(params_in)
+    params_in=open('tuned_params.pickle', 'rb')
+    params=pickle.load(params_in)
     params_in.close()
-    outlook_in = open('outlook.pickle', 'rb')
-    outlook = pickle.load(outlook_in)
+    outlook_in=open('outlook.pickle', 'rb')
+    outlook=pickle.load(outlook_in)
     outlook_in.close()
-    outlook = outlook.astype({'Horizon': 'str'})
+    outlook=outlook.astype({'Horizon': 'str'})
 
     #Build and fit Prohpet model with tuned 'changepoint_prior_scale' and 'seasonality_prior_scale' parameters 
     model=Prophet(
     seasonality_mode="multiplicative",
     yearly_seasonality=True,
-    interval_width = int_select,
+    interval_width=int_select,
     changepoint_prior_scale=params['changepoint_prior_scale'][0],
     seasonality_prior_scale=params['seasonality_prior_scale'][0],
     changepoint_range=params['changepoint_range'][0]
@@ -58,7 +58,7 @@ def main():
     #Produce forecast and forecast plot employing the user-defined horizon
     future=model.make_future_dataframe(periods=horizon)
     forecast=model.predict(future)
-    forecast_data = forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
+    forecast_data=forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
     forecast_plot=plot_plotly(model, forecast_data, xlabel='Date', ylabel='Close Price (USD)')
 
     #Display forecast plot using streamlit widget 

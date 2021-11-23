@@ -50,16 +50,16 @@ def tune():
 
     #Perfrom grid-search using mean absolute error (mae) as evaluation metric
     for params in all_params:
-        m = Prophet(**params, seasonality_mode="multiplicative").fit(load_data()) 
-        df_cv = cross_validation(m, cutoffs=cutoffs, horizon='60 days', parallel="processes")
-        df_p = performance_metrics(df_cv, rolling_window=1)
+        m=Prophet(**params, seasonality_mode="multiplicative").fit(load_data()) 
+        df_cv=cross_validation(m, cutoffs=cutoffs, horizon='60 days', parallel="processes")
+        df_p=performance_metrics(df_cv, rolling_window=1)
         mae.append(df_p['mae'].values[0])
 
     #Create dataframe of results and return best perfroming parameters
     tuning_results=pd.DataFrame(all_params)
     tuning_results['mae']=mae
-    tuning_results = tuning_results.sort_values(['mae'])[:1]
-    tuning_results = tuning_results.reset_index(drop=True)
+    tuning_results=tuning_results.sort_values(['mae'])[:1]
+    tuning_results=tuning_results.reset_index(drop=True)
     
     return tuning_results
 
@@ -68,7 +68,7 @@ def cross_val(m):
    Perform cross-validation and return dataframe of performance metrics
    """ 
    #Perform cross-validation (resulting in 46 model fits) and produce performance metrics
-   df_cv=cross_validation(m, initial='730 days', period='30 days', horizon = '60 days')
+   df_cv=cross_validation(m, initial='730 days', period='30 days', horizon='60 days')
    df_p=performance_metrics(df_cv)
 
    return df_p
@@ -78,13 +78,13 @@ def get_outlook(df):
     Convert 'mae' and 'mape' into user-friendly evaluation metrics. Returns a dataframe with horizon, average +/- dollars, and average accuracy  
     """
     #Extract metrics of interest ('mae' and 'mape')
-    forecast_outlook = df[['horizon', 'mae', 'mape']][:9]
-    forecast_outlook = forecast_outlook.rename({'mae': '+/- Dollars (USD)', 'horizon': 'Horizon'}, axis = 1)
+    forecast_outlook=df[['horizon', 'mae', 'mape']][:9]
+    forecast_outlook=forecast_outlook.rename({'mae': '+/- Dollars (USD)', 'horizon': 'Horizon'}, axis=1)
 
     #Create 'accuracy' metrics using 'mape' and produce final dataframe
-    forecast_outlook['Accuracy (%)'] = forecast_outlook.apply(lambda row: 100 - row['mape']*100, axis = 1)
-    forecast_outlook = forecast_outlook.drop('mape', axis = 1)
-    forecast_outlook = forecast_outlook.round(2)
+    forecast_outlook['Accuracy (%)']=forecast_outlook.apply(lambda row: 100 - row['mape']*100, axis=1)
+    forecast_outlook=forecast_outlook.drop('mape', axis=1)
+    forecast_outlook=forecast_outlook.round(2)
 
     return forecast_outlook
 
@@ -95,7 +95,7 @@ def main():
     and performance metrics are then 'pickled'.
     """
     #Get tuned parameters and load data for model
-    tuned_params = tune()
+    tuned_params=tune()
     data=load_data()
 
     #Create Prophet model object and fit to data
@@ -111,15 +111,15 @@ def main():
     model.fit(data)
 
     #Get performacne metrics from cross-validation
-    outlook_res = get_outlook(cross_val(model))
+    outlook_res=get_outlook(cross_val(model))
 
     #Pickle tuned parameters
-    pickle_params = open('tuned_params.pickle', 'wb')
+    pickle_params=open('tuned_params.pickle', 'wb')
     pickle.dump(tuned_params, pickle_params)
     pickle_params.close()
 
     #Pickle cross-validation performance metrics
-    pickle_outlook = open('outlook.pickle', 'wb')
+    pickle_outlook=open('outlook.pickle', 'wb')
     pickle.dump(outlook_res, pickle_outlook)
     pickle_outlook.close()
 
