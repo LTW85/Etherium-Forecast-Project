@@ -45,7 +45,6 @@ def main():
         index=3
         )
     
-
     #Load data from Yahoo Finance (function defined in model_tuning.py), as well as 'pickled' parameters and cross-validation performance metrics
     data=load_data()
     params_in=open('tuned_params.pickle', 'rb')
